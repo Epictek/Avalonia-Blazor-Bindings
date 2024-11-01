@@ -9,7 +9,7 @@ namespace BlazorBindingsAvalonia.Elements
         internal static void RegisterAdditionalHandlers()
         {
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TopLevel.AutoSafeAreaPadding",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -21,7 +21,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TopLevel.SystemBarColor",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {

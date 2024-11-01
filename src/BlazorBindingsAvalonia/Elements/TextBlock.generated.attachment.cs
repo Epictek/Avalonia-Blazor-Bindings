@@ -8,56 +8,84 @@ namespace BlazorBindingsAvalonia.Elements
         [System.Runtime.CompilerServices.ModuleInitializer]
         internal static void RegisterAdditionalHandlers()
         {
-            AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TextBlock.BaselineOffset",
-                (element, value) => 
+        AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TextBlock.BaselineOffset",
+            (element, value) =>
+            {
+                if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                 {
-                    if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                    element.ClearValue(AC.TextBlock.BaselineOffsetProperty);
+                }
+                else
+                {
+                    if (value is string s)
                     {
-                        element.ClearValue(AC.TextBlock.BaselineOffsetProperty);
+                        AC.TextBlock.SetBaselineOffset((Avalonia.Controls.Control)element, double.Parse(s));
                     }
                     else
                     {
                         AC.TextBlock.SetBaselineOffset((Avalonia.Controls.Control)element, (double)value);
                     }
-                });
-            AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TextBlock.LetterSpacing",
-                (element, value) => 
+                }
+            });
+        AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TextBlock.LetterSpacing",
+            (element, value) =>
+            {
+                if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                 {
-                    if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                    element.ClearValue(AC.TextBlock.LetterSpacingProperty);
+                }
+                else
+                {
+                    if (value is string s)
                     {
-                        element.ClearValue(AC.TextBlock.LetterSpacingProperty);
+                        AC.TextBlock.SetLetterSpacing((Avalonia.Controls.Control)element, double.Parse(s));
                     }
                     else
                     {
                         AC.TextBlock.SetLetterSpacing((Avalonia.Controls.Control)element, (double)value);
                     }
-                });
-            AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TextBlock.LineHeight",
-                (element, value) => 
+                }
+            });
+        AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TextBlock.LineHeight",
+            (element, value) =>
+            {
+                if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                 {
-                    if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                    element.ClearValue(AC.TextBlock.LineHeightProperty);
+                }
+                else
+                {
+                    if (value is string s)
                     {
-                        element.ClearValue(AC.TextBlock.LineHeightProperty);
+                        AC.TextBlock.SetLineHeight((Avalonia.Controls.Control)element, double.Parse(s));
                     }
                     else
                     {
                         AC.TextBlock.SetLineHeight((Avalonia.Controls.Control)element, (double)value);
                     }
-                });
-            AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TextBlock.MaxLines",
-                (element, value) => 
+                }
+            });
+        AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TextBlock.MaxLines",
+            (element, value) =>
+            {
+                if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                 {
-                    if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                    element.ClearValue(AC.TextBlock.MaxLinesProperty);
+                }
+                else
+                {
+                    if (value is string s)
                     {
-                        element.ClearValue(AC.TextBlock.MaxLinesProperty);
+                        AC.TextBlock.SetMaxLines((Avalonia.Controls.Control)element, int.Parse(s));
                     }
                     else
                     {
                         AC.TextBlock.SetMaxLines((Avalonia.Controls.Control)element, (int)value);
                     }
-                });
+                }
+            });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TextBlock.TextAlignment",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -69,7 +97,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TextBlock.TextTrimming",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -81,7 +109,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TextBlock.TextWrapping",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {

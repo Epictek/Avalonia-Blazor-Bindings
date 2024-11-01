@@ -8,20 +8,27 @@ namespace BlazorBindingsAvalonia.Elements
         [System.Runtime.CompilerServices.ModuleInitializer]
         internal static void RegisterAdditionalHandlers()
         {
-            AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ToolTip.BetweenShowDelay",
-                (element, value) => 
+        AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ToolTip.BetweenShowDelay",
+            (element, value) =>
+            {
+                if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                 {
-                    if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                    element.ClearValue(AC.ToolTip.BetweenShowDelayProperty);
+                }
+                else
+                {
+                    if (value is string s)
                     {
-                        element.ClearValue(AC.ToolTip.BetweenShowDelayProperty);
+                        AC.ToolTip.SetBetweenShowDelay((Avalonia.Controls.Control)element, int.Parse(s));
                     }
                     else
                     {
                         AC.ToolTip.SetBetweenShowDelay((Avalonia.Controls.Control)element, (int)value);
                     }
-                });
+                }
+            });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ToolTip.CustomPopupPlacementCallback",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -32,20 +39,27 @@ namespace BlazorBindingsAvalonia.Elements
                         AC.ToolTip.SetCustomPopupPlacementCallback((Avalonia.Controls.Control)element, (AC.Primitives.PopupPositioning.CustomPopupPlacementCallback)value);
                     }
                 });
-            AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ToolTip.HorizontalOffset",
-                (element, value) => 
+        AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ToolTip.HorizontalOffset",
+            (element, value) =>
+            {
+                if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                 {
-                    if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                    element.ClearValue(AC.ToolTip.HorizontalOffsetProperty);
+                }
+                else
+                {
+                    if (value is string s)
                     {
-                        element.ClearValue(AC.ToolTip.HorizontalOffsetProperty);
+                        AC.ToolTip.SetHorizontalOffset((Avalonia.Controls.Control)element, double.Parse(s));
                     }
                     else
                     {
                         AC.ToolTip.SetHorizontalOffset((Avalonia.Controls.Control)element, (double)value);
                     }
-                });
+                }
+            });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ToolTip.IsOpen",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -57,7 +71,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ToolTip.Placement",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -69,7 +83,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ToolTip.ServiceEnabled",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -80,20 +94,27 @@ namespace BlazorBindingsAvalonia.Elements
                         AC.ToolTip.SetServiceEnabled((Avalonia.Controls.Control)element, (bool)value);
                     }
                 });
-            AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ToolTip.ShowDelay",
-                (element, value) => 
+        AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ToolTip.ShowDelay",
+            (element, value) =>
+            {
+                if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                 {
-                    if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                    element.ClearValue(AC.ToolTip.ShowDelayProperty);
+                }
+                else
+                {
+                    if (value is string s)
                     {
-                        element.ClearValue(AC.ToolTip.ShowDelayProperty);
+                        AC.ToolTip.SetShowDelay((Avalonia.Controls.Control)element, int.Parse(s));
                     }
                     else
                     {
                         AC.ToolTip.SetShowDelay((Avalonia.Controls.Control)element, (int)value);
                     }
-                });
+                }
+            });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ToolTip.ShowOnDisabled",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -105,7 +126,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ToolTip.ChildContent",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -116,18 +137,25 @@ namespace BlazorBindingsAvalonia.Elements
                         AC.ToolTip.SetTip((Avalonia.Controls.Control)element, (object)value);
                     }
                 });
-            AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ToolTip.VerticalOffset",
-                (element, value) => 
+        AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ToolTip.VerticalOffset",
+            (element, value) =>
+            {
+                if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                 {
-                    if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                    element.ClearValue(AC.ToolTip.VerticalOffsetProperty);
+                }
+                else
+                {
+                    if (value is string s)
                     {
-                        element.ClearValue(AC.ToolTip.VerticalOffsetProperty);
+                        AC.ToolTip.SetVerticalOffset((Avalonia.Controls.Control)element, double.Parse(s));
                     }
                     else
                     {
                         AC.ToolTip.SetVerticalOffset((Avalonia.Controls.Control)element, (double)value);
                     }
-                });
+                }
+            });
         }
     }
 

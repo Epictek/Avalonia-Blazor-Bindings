@@ -9,7 +9,7 @@ namespace BlazorBindingsAvalonia.Elements
         internal static void RegisterAdditionalHandlers()
         {
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ScrollViewer.AllowAutoHide",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -21,7 +21,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ScrollViewer.BringIntoViewOnFocusChange",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -33,7 +33,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ScrollViewer.HorizontalScrollBarVisibility",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -45,7 +45,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ScrollViewer.HorizontalSnapPointsAlignment",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -57,7 +57,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ScrollViewer.HorizontalSnapPointsType",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -69,7 +69,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ScrollViewer.IsDeferredScrollingEnabled",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -81,7 +81,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ScrollViewer.IsScrollChainingEnabled",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -93,7 +93,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ScrollViewer.IsScrollInertiaEnabled",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -105,7 +105,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ScrollViewer.VerticalScrollBarVisibility",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -117,7 +117,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ScrollViewer.VerticalSnapPointsAlignment",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -129,7 +129,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("ScrollViewer.VerticalSnapPointsType",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {

@@ -8,54 +8,82 @@ namespace BlazorBindingsAvalonia.Elements
         [System.Runtime.CompilerServices.ModuleInitializer]
         internal static void RegisterAdditionalHandlers()
         {
-            AttachedPropertyRegistry.RegisterAttachedPropertyHandler("Canvas.Bottom",
-                (element, value) => 
+        AttachedPropertyRegistry.RegisterAttachedPropertyHandler("Canvas.Bottom",
+            (element, value) =>
+            {
+                if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                 {
-                    if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                    element.ClearValue(AC.Canvas.BottomProperty);
+                }
+                else
+                {
+                    if (value is string s)
                     {
-                        element.ClearValue(AC.Canvas.BottomProperty);
+                        AC.Canvas.SetBottom((Avalonia.AvaloniaObject)element, double.Parse(s));
                     }
                     else
                     {
                         AC.Canvas.SetBottom((Avalonia.AvaloniaObject)element, (double)value);
                     }
-                });
-            AttachedPropertyRegistry.RegisterAttachedPropertyHandler("Canvas.Left",
-                (element, value) => 
+                }
+            });
+        AttachedPropertyRegistry.RegisterAttachedPropertyHandler("Canvas.Left",
+            (element, value) =>
+            {
+                if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                 {
-                    if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                    element.ClearValue(AC.Canvas.LeftProperty);
+                }
+                else
+                {
+                    if (value is string s)
                     {
-                        element.ClearValue(AC.Canvas.LeftProperty);
+                        AC.Canvas.SetLeft((Avalonia.AvaloniaObject)element, double.Parse(s));
                     }
                     else
                     {
                         AC.Canvas.SetLeft((Avalonia.AvaloniaObject)element, (double)value);
                     }
-                });
-            AttachedPropertyRegistry.RegisterAttachedPropertyHandler("Canvas.Right",
-                (element, value) => 
+                }
+            });
+        AttachedPropertyRegistry.RegisterAttachedPropertyHandler("Canvas.Right",
+            (element, value) =>
+            {
+                if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                 {
-                    if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                    element.ClearValue(AC.Canvas.RightProperty);
+                }
+                else
+                {
+                    if (value is string s)
                     {
-                        element.ClearValue(AC.Canvas.RightProperty);
+                        AC.Canvas.SetRight((Avalonia.AvaloniaObject)element, double.Parse(s));
                     }
                     else
                     {
                         AC.Canvas.SetRight((Avalonia.AvaloniaObject)element, (double)value);
                     }
-                });
-            AttachedPropertyRegistry.RegisterAttachedPropertyHandler("Canvas.Top",
-                (element, value) => 
+                }
+            });
+        AttachedPropertyRegistry.RegisterAttachedPropertyHandler("Canvas.Top",
+            (element, value) =>
+            {
+                if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                 {
-                    if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                    element.ClearValue(AC.Canvas.TopProperty);
+                }
+                else
+                {
+                    if (value is string s)
                     {
-                        element.ClearValue(AC.Canvas.TopProperty);
+                        AC.Canvas.SetTop((Avalonia.AvaloniaObject)element, double.Parse(s));
                     }
                     else
                     {
                         AC.Canvas.SetTop((Avalonia.AvaloniaObject)element, (double)value);
                     }
-                });
+                }
+            });
         }
     }
 

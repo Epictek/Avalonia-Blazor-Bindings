@@ -9,7 +9,7 @@ namespace BlazorBindingsAvalonia.Elements
         internal static void RegisterAdditionalHandlers()
         {
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("DockPanel.Dock",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {

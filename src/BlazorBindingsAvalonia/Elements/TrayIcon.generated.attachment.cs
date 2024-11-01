@@ -9,7 +9,7 @@ namespace BlazorBindingsAvalonia.Elements
         internal static void RegisterAdditionalHandlers()
         {
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TrayIcon.Icons",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {

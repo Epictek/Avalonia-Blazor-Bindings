@@ -8,32 +8,46 @@ namespace BlazorBindingsAvalonia.Elements
         [System.Runtime.CompilerServices.ModuleInitializer]
         internal static void RegisterAdditionalHandlers()
         {
-            AttachedPropertyRegistry.RegisterAttachedPropertyHandler("Grid.Column",
-                (element, value) => 
+        AttachedPropertyRegistry.RegisterAttachedPropertyHandler("Grid.Column",
+            (element, value) =>
+            {
+                if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                 {
-                    if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                    element.ClearValue(AC.Grid.ColumnProperty);
+                }
+                else
+                {
+                    if (value is string s)
                     {
-                        element.ClearValue(AC.Grid.ColumnProperty);
+                        AC.Grid.SetColumn((Avalonia.Controls.Control)element, int.Parse(s));
                     }
                     else
                     {
                         AC.Grid.SetColumn((Avalonia.Controls.Control)element, (int)value);
                     }
-                });
-            AttachedPropertyRegistry.RegisterAttachedPropertyHandler("Grid.ColumnSpan",
-                (element, value) => 
+                }
+            });
+        AttachedPropertyRegistry.RegisterAttachedPropertyHandler("Grid.ColumnSpan",
+            (element, value) =>
+            {
+                if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                 {
-                    if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                    element.ClearValue(AC.Grid.ColumnSpanProperty);
+                }
+                else
+                {
+                    if (value is string s)
                     {
-                        element.ClearValue(AC.Grid.ColumnSpanProperty);
+                        AC.Grid.SetColumnSpan((Avalonia.Controls.Control)element, int.Parse(s));
                     }
                     else
                     {
                         AC.Grid.SetColumnSpan((Avalonia.Controls.Control)element, (int)value);
                     }
-                });
+                }
+            });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("Grid.IsSharedSizeScope",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -44,30 +58,44 @@ namespace BlazorBindingsAvalonia.Elements
                         AC.Grid.SetIsSharedSizeScope((Avalonia.Controls.Control)element, (bool)value);
                     }
                 });
-            AttachedPropertyRegistry.RegisterAttachedPropertyHandler("Grid.Row",
-                (element, value) => 
+        AttachedPropertyRegistry.RegisterAttachedPropertyHandler("Grid.Row",
+            (element, value) =>
+            {
+                if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                 {
-                    if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                    element.ClearValue(AC.Grid.RowProperty);
+                }
+                else
+                {
+                    if (value is string s)
                     {
-                        element.ClearValue(AC.Grid.RowProperty);
+                        AC.Grid.SetRow((Avalonia.Controls.Control)element, int.Parse(s));
                     }
                     else
                     {
                         AC.Grid.SetRow((Avalonia.Controls.Control)element, (int)value);
                     }
-                });
-            AttachedPropertyRegistry.RegisterAttachedPropertyHandler("Grid.RowSpan",
-                (element, value) => 
+                }
+            });
+        AttachedPropertyRegistry.RegisterAttachedPropertyHandler("Grid.RowSpan",
+            (element, value) =>
+            {
+                if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                 {
-                    if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                    element.ClearValue(AC.Grid.RowSpanProperty);
+                }
+                else
+                {
+                    if (value is string s)
                     {
-                        element.ClearValue(AC.Grid.RowSpanProperty);
+                        AC.Grid.SetRowSpan((Avalonia.Controls.Control)element, int.Parse(s));
                     }
                     else
                     {
                         AC.Grid.SetRowSpan((Avalonia.Controls.Control)element, (int)value);
                     }
-                });
+                }
+            });
         }
     }
 

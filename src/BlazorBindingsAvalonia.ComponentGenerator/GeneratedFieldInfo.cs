@@ -133,21 +133,66 @@ public partial class GeneratedFieldInfo
         var effectiveBindingHostType = HostType.GetFullName();
         
         var effectiveAvaloniaFieldName = AvaloniaFieldName.Replace("Property", "");
-        
-        return $$"""
-            {{indent}}    AttachedPropertyRegistry.RegisterAttachedPropertyHandler("{{ComponentName}}.{{ComponentFieldName}}",
-            {{indent}}        (element, value) => 
-            {{indent}}        {
-            {{indent}}            if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
-            {{indent}}            {
-            {{indent}}                element.ClearValue({{AvaloniaContainingTypeName}}.{{AvaloniaFieldName}});
-            {{indent}}            }
-            {{indent}}            else
-            {{indent}}            {
-            {{indent}}                {{AvaloniaContainingTypeName}}.Set{{effectiveAvaloniaFieldName}}(({{effectiveBindingHostType}})element, ({{GetOriginalAttachedPropertyType()}})value);
-            {{indent}}            }
-            {{indent}}        });
-            """;
+        var originalAttachedPropertyType = GetOriginalAttachedPropertyType();
+        return originalAttachedPropertyType switch
+        {
+            "int" => $$"""
+                       {{indent}}AttachedPropertyRegistry.RegisterAttachedPropertyHandler("{{ComponentName}}.{{ComponentFieldName}}",
+                       {{indent}}    (element, value) =>
+                       {{indent}}    {
+                       {{indent}}        if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                       {{indent}}        {
+                       {{indent}}            element.ClearValue({{AvaloniaContainingTypeName}}.{{AvaloniaFieldName}});
+                       {{indent}}        }
+                       {{indent}}        else
+                       {{indent}}        {
+                       {{indent}}            if (value is string s)
+                       {{indent}}            {
+                       {{indent}}                {{AvaloniaContainingTypeName}}.Set{{effectiveAvaloniaFieldName}}(({{effectiveBindingHostType}})element, int.Parse(s));
+                       {{indent}}            }
+                       {{indent}}            else
+                       {{indent}}            {
+                       {{indent}}                {{AvaloniaContainingTypeName}}.Set{{effectiveAvaloniaFieldName}}(({{effectiveBindingHostType}})element, ({{GetOriginalAttachedPropertyType()}})value);
+                       {{indent}}            }
+                       {{indent}}        }
+                       {{indent}}    });
+                       """,
+            "double" => $$"""
+                          {{indent}}AttachedPropertyRegistry.RegisterAttachedPropertyHandler("{{ComponentName}}.{{ComponentFieldName}}",
+                          {{indent}}    (element, value) =>
+                          {{indent}}    {
+                          {{indent}}        if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                          {{indent}}        {
+                          {{indent}}            element.ClearValue({{AvaloniaContainingTypeName}}.{{AvaloniaFieldName}});
+                          {{indent}}        }
+                          {{indent}}        else
+                          {{indent}}        {
+                          {{indent}}            if (value is string s)
+                          {{indent}}            {
+                          {{indent}}                {{AvaloniaContainingTypeName}}.Set{{effectiveAvaloniaFieldName}}(({{effectiveBindingHostType}})element, double.Parse(s));
+                          {{indent}}            }
+                          {{indent}}            else
+                          {{indent}}            {
+                          {{indent}}                {{AvaloniaContainingTypeName}}.Set{{effectiveAvaloniaFieldName}}(({{effectiveBindingHostType}})element, ({{GetOriginalAttachedPropertyType()}})value);
+                          {{indent}}            }
+                          {{indent}}        }
+                          {{indent}}    });
+                          """,
+            _ => $$"""
+                   {{indent}}    AttachedPropertyRegistry.RegisterAttachedPropertyHandler("{{ComponentName}}.{{ComponentFieldName}}",
+                   {{indent}}        (element, value) =>
+                   {{indent}}        {
+                   {{indent}}            if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                   {{indent}}            {
+                   {{indent}}                element.ClearValue({{AvaloniaContainingTypeName}}.{{AvaloniaFieldName}});
+                   {{indent}}            }
+                   {{indent}}            else
+                   {{indent}}            {
+                   {{indent}}                {{AvaloniaContainingTypeName}}.Set{{effectiveAvaloniaFieldName}}(({{effectiveBindingHostType}})element, ({{GetOriginalAttachedPropertyType()}})value);
+                   {{indent}}            }
+                   {{indent}}        });
+                   """
+        };
     }
 
     public string GetExtensionMethodDeclaration()

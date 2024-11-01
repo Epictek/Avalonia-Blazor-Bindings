@@ -10,7 +10,7 @@ namespace BlazorBindingsAvalonia.Elements
         internal static void RegisterAdditionalHandlers()
         {
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TextElement.FontFamily",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -22,7 +22,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TextElement.FontFeatures",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -33,20 +33,27 @@ namespace BlazorBindingsAvalonia.Elements
                         ACD.TextElement.SetFontFeatures((Avalonia.Controls.Control)element, (global::Avalonia.Media.FontFeatureCollection)value);
                     }
                 });
-            AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TextElement.FontSize",
-                (element, value) => 
+        AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TextElement.FontSize",
+            (element, value) =>
+            {
+                if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                 {
-                    if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
+                    element.ClearValue(ACD.TextElement.FontSizeProperty);
+                }
+                else
+                {
+                    if (value is string s)
                     {
-                        element.ClearValue(ACD.TextElement.FontSizeProperty);
+                        ACD.TextElement.SetFontSize((Avalonia.Controls.Control)element, double.Parse(s));
                     }
                     else
                     {
                         ACD.TextElement.SetFontSize((Avalonia.Controls.Control)element, (double)value);
                     }
-                });
+                }
+            });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TextElement.FontStretch",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -58,7 +65,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TextElement.FontStyle",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -70,7 +77,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TextElement.FontWeight",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
@@ -82,7 +89,7 @@ namespace BlazorBindingsAvalonia.Elements
                     }
                 });
             AttachedPropertyRegistry.RegisterAttachedPropertyHandler("TextElement.Foreground",
-                (element, value) => 
+                (element, value) =>
                 {
                     if (value?.Equals(AvaloniaProperty.UnsetValue) == true)
                     {
