@@ -22,11 +22,6 @@ jobs:
         dotnet-version: '8.0.x'
     - name: Restore dependencies
       run: dotnet restore BlazorBindingsAvalonia.sln
-    - name: Build templates
-      run: |
-        cd templates
-        dotnet build -c Release
-        cd ..
     - name: Pack nugets
       run: dotnet pack -o ./packages -c Release --no-restore
     - name: Upload a Build Artifact
