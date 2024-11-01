@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Title>Avalonia binding for Blazor</Title>
+		<Description>Avalonia Blazor Bindings enables using Blazor syntax in .razor files to build native Avalonia apps.</Description>
+		<PackageTags>blazor;blazorbindings</PackageTags>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">10.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Avalonia"/>
+		<PackageReference Include="Avalonia.Controls.ColorPicker"/>
+		<PackageReference Include="Avalonia.Controls.DataGrid"/>
+		<PackageReference Include="Avalonia.Controls.ItemsRepeater"/>
+		<PackageReference Include="Avalonia.Diagnostics"/>
+		<PackageReference Include="DotNet.ReproducibleBuilds">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+
+		<PackageReference Include="Microsoft.Extensions.Logging" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\BlazorBindingsAvalonia.Core\BlazorBindingsAvalonia.Core.csproj" />
+	</ItemGroup>
+	
+</Project>

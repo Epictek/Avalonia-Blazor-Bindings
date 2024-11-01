@@ -4,12 +4,12 @@
         <PackageVersion Include="Avalonia.Base" Version="$(AvaloniaVersion)" />
         <PackageVersion Include="Avalonia.Controls.ColorPicker" Version="$(AvaloniaVersion)" />
         <PackageVersion Include="Avalonia.Controls.DataGrid" Version="$(AvaloniaVersion)" />
-        <PackageVersion Include="Avalonia.Controls.ItemsRepeater" Version="$(AvaloniaVersion)" />
+        <PackageVersion Include="Avalonia.Controls.ItemsRepeater" Version="11.1.4" />
         <PackageVersion Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
         <PackageVersion Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
         <PackageVersion Include="Avalonia.Controls.ColorPicker" Version="$(AvaloniaVersion)" />
         <PackageVersion Include="Avalonia.Controls.DataGrid" Version="$(AvaloniaVersion)" />
-        <PackageVersion Include="Avalonia.Controls.ItemsRepeater" Version="$(AvaloniaVersion)" />
+        <PackageVersion Include="Avalonia.Controls.ItemsRepeater" Version="11.1.4" />
         <PackageVersion Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
         <PackageVersion Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
         <PackageVersion Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersion)" />
